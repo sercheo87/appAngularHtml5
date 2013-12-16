@@ -1,0 +1,64 @@
+<div class="panel-heading">
+    <h3 class="panel-title">{{title}}</h3>
+</div>
+<div class="panel-body">
+    <p>{{content}}</p>
+    <form class="form-horizontal" role="form" ng-submit="submit()">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="pass">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Pass</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>Footer content 1</td>
+                <td>Footer content 2</td>
+            </tr>
+        </tfoot>
+        <tbody data-ng-repeat="item in collectionUsers">
+            <tr>
+                <td>
+                    <a ng-click="removeItem(item.guid)">{{item.guid}}</a>
+                </td>
+                <td>
+                    <p>{{item.email}}</p>
+                </td>
+                <td>
+                    <p>{{item.pass}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pre>list={{collectionUsers}}</pre>
+</div>
